@@ -1,0 +1,124 @@
+﻿# A5:ER FORMAT:08
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape"
+Domain=キー=INTEGER GENERATED ALWAYS AS IDENTITY
+Domain=文字45=@VARCHAR(45)
+Domain=文字1=@CHAR(1)
+Domain=数値=@INT
+Domain=日時=@DATETIME
+Domain=キー（外部）=@INT
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+GenerateDropTableStatement=1
+DropTableIfExists=1
+GenerateCommentStatement=0
+GenerateCommentStatement_LName=0
+GenerateCommentStatement_Comment=0
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+
+[Entity]
+PName=orderd_product
+LName=orderd_product
+Comment=
+TableOption=
+Page=Main
+Left=500
+Top=500
+Field="id","id","*キー","NOT NULL",0,"","",$FFFFFFFF,""
+Field="customer_order_id","customer_order_id","*キー（外部）","NOT NULL",,"","",$FFFFFFFF,""
+Field="product_id","product_id","*キー（外部）","NOT NULL",,"","",$FFFFFFFF,""
+Field="quantity","quantity","*数値","NOT NULL",,"","",$FFFFFFFF,""
+Field="create_date","create_date","*日時","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20131114191552
+Position="Main",500,500,305,157
+
+[Entity]
+PName=product
+LName=product
+Comment=
+TableOption=
+Page=Main
+Left=900
+Top=250
+Field="id","id","*キー","NOT NULL",0,"","",$FFFFFFFF,""
+Field="name","name","*文字45","NOT NULL",,"","",$FFFFFFFF,""
+Field="price","price","*数値","NOT NULL",,"","",$FFFFFFFF,""
+Field="discription","discription","*文字45",,,"","",$FFFFFFFF,""
+Field="last_uopdate","last_uopdate","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20131114181832
+Position="Main",900,250,208,162
+
+[Entity]
+PName=customer_order
+LName=customer_order
+Comment=
+TableOption=
+Page=MAIN
+Left=500
+Top=250
+Field="id","id","*キー","NOT NULL",0,"","",$FFFFFFFF,""
+Field="customer_id","customer_id","*キー（外部）","NOT NULL",,"","",$FFFFFFFF,""
+Field="amount","amount","*数値","NOT NULL",,"","",$FFFFFFFF,""
+Field="create_date","create_date","*日時","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20131114191237
+Position="MAIN",500,250,247,102
+
+[Entity]
+PName=customer
+LName=customer
+Comment=
+TableOption=
+Page=MAIN
+Left=150
+Top=250
+Field="id","id","*キー","NOT NULL",0,"","",$FFFFFFFF,""
+Field="name","name","*文字45","NOT NULL",,"","",$FFFFFFFF,""
+Field="email","email","*文字45","NOT NULL",,"","",$FFFFFFFF,""
+Field="phone","phone","*文字45","NOT NULL",,"","",$FFFFFFFF,""
+Field="gender","gender","*文字1","NOT NULL",,"","",$FFFFFFFF,""
+Field="address","address","*文字45","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20131114165516
+Position="MAIN",150,250,175,199
