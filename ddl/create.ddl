@@ -21,9 +21,10 @@ drop table product;
 
 create table product (
   id INTEGER GENERATED ALWAYS AS IDENTITY not null
-  , name VARCHAR(45) not null
+  , name VARCHAR(256) not null
   , price INT not null
-  , discription VARCHAR(45)
+  , discription VARCHAR(256)
+  , image_file VARCHAR(256)
   , last_uopdate TIMESTAMP not null
   , constraint product_PKC primary key (id)
 ) ;
@@ -44,10 +45,10 @@ drop table customer;
 
 create table customer (
   id INTEGER GENERATED ALWAYS AS IDENTITY not null
-  , name VARCHAR(45) not null
-  , email VARCHAR(45) not null
+  , name VARCHAR(256) not null
+  , email VARCHAR(256) not null
   , phone VARCHAR(45) not null
   , gender CHAR(1) not null
-  , address VARCHAR(45) not null
+  , address VARCHAR(256) not null
   , constraint customer_PKC primary key (id)
 ) ;
